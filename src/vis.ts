@@ -1,5 +1,12 @@
-export class VisObj {
+import {Gate} from "./gate"
 
+export class VisObj extends Gate {
+    public constructor(){
+        super();
+        this.onChanged = (inA : boolean, inB : boolean) => {
+            return inA == inB; // output is unimportant
+        }
+    }
     protected update(isOn : boolean){
         console.log("Unimplemented Visualization Object : on ? " + isOn);
     }
